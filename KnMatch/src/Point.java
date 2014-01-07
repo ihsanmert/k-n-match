@@ -4,7 +4,8 @@ public class Point {
 
 	int id;
 	double[] values;
-
+	String label = "";
+	int appearNumber=0;
 	public Point(double... values){
 		this.values = values;
 		id = counter;
@@ -16,15 +17,10 @@ public class Point {
 		for(double d : values){
 			str += String.format("%.2f, ", d);
 		}
-		return "#" + id + "#(" + str.substring(0, str.length() - 2) + ")";
+		return "#" + id + "#(" + str.substring(0, str.length() - 2) + ") label:" + label +" numberOfApperances:" + appearNumber;
 	}
 	
-	class Attribute{
-		double value;
-		int p_id;
-		public Attribute(double value, int p_id){
-			this.p_id = p_id;
-			this.value = value;
-		}
+	public void setLabel(String label){
+		this.label = label;
 	}
 }
